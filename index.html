@@ -12,11 +12,30 @@
     
     <div id="app">
 
-        
+        <div class="new-task">
+            <input type="text" placeholder="Nuova Task" v-model="newTask" @KeyUp.enter="addTask">
+            <button @click="addTask">Aggiungi</button>
+        </div>
+
+        <div class="alert" style="color: red;" v-if="error">
+            Inserisci una frase di almeno 5 caratteri!
+        </div>
+
+        <div class="tasks-container" v-if="tasks.length > 0">
+            <ul>
+                <li class="task" v-for="task in tasks" @click="deleteTask(i)">
+                    {{task.text}}
+                    <i class="fa-solid fa-xmark"></i>
+                </li>
+            </ul>
+        </div>
+
+        <h2 v-else="">Non ci sono elementi nella lista!</h2>
+    
+
     </div>
 
-
-
+    
 
 
 
