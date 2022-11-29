@@ -6,17 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,200;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet"> 
     <title>To do List</title>
 </head>
 <body>
     
-    <div id="app">
+    <h1>MADE TO HELP YOU NOT FORGET</h1>
+
+    <div id="app" class="container">
+
+        
+        <div class="container-img">
+            <span>TO DO </span>
+            <img id="img-lista" src="https://images.vexels.com/media/users/3/151869/isolated/preview/767ca771755f4675d4063c03e17c8595-medical-checklist-icon.png" alt="">
+            <span> LIST</span>
+        </div>
+        
+        
 
         <div class="new-task">
-            <input type="text" placeholder="Nuova Task" v-model="newTask" @KeyUp.enter="addTask">
+            <input type="text"  id="input-task" placeholder="Nuova Task" v-model="newTask" @KeyUp.enter="addTask">
             <button @click="addTask">Aggiungi</button>
         </div>
 
+        
         <div class="alert" style="color: red;" v-if="error">
             Inserisci una frase di almeno 5 caratteri!
         </div>
